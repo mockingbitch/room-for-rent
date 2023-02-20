@@ -7,6 +7,7 @@ import {store} from './redux/store';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
+import i18n from "./components/LangConfig";
 
 let persistor = persistStore(store);
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from '../../../components/common/Footer'
+import { FormattedMessage } from 'react-intl';
 
 const Category = () => {
     return (
@@ -9,7 +10,7 @@ const Category = () => {
                     <div className="col-12">
                     <div className="card mb-4">
                         <div className="card-header pb-0">
-                        <h6>Authors table</h6>
+                        <h6>Category</h6>
                         </div>
                         <div className="card-body px-0 pt-0 pb-2">
                         <div className="table-responsive p-0">
