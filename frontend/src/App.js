@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { publicRoutes, privateRoutes } from './routes';
 import { DefaultLayout } from './containers/layouts';
 import './App.css';
@@ -26,18 +26,19 @@ function App() {
                 )
             })}
 
-          { isLoggedIn && privateRoutes.map((privateRoute, index) => {
-            const PrivateLayout = privateRoute.layout || DefaultLayout;
-            const PrivatePage = privateRoute.component;
+            { isLoggedIn && privateRoutes.map((privateRoute, index) => {
+              const PrivateLayout = privateRoute.layout || DefaultLayout;
+              const PrivatePage = privateRoute.component;
 
-            return (
-              <Route key={ index } path={ privateRoute.path } element={
-                <PrivateLayout>
-                  <PrivatePage />
-                </PrivateLayout>
-              } />
-            )
-          })}
+              return (
+                <Route key={ index } path={ privateRoute.path } element={
+                  <PrivateLayout>
+                    <PrivatePage />
+                  </PrivateLayout>
+                } />
+              )
+            })}
+            {/* <Route path='*' element={<Navigate to='/' replace />} /> */}
           </Routes>
       </Router>
     </>
