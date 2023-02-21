@@ -10,56 +10,56 @@ import Category from "./views/examples/Category.jsx";
 var routes = [
   {
     path: "/index",
-    name: "Dashboard",
+    name: "routes.dashboard",
     icon: "ni ni-tv-2 text-primary",
     component: Index,
     layout: "/admin"
   },
   {
     path: "/icons",
-    name: "Icons",
+    name: "routes.icons",
     icon: "ni ni-planet text-blue",
     component: Icons,
     layout: "/admin"
   },
   {
-    path: "/maps",
-    name: "Maps",
+    path: "/house",
+    name: "routes.house",
     icon: "ni ni-pin-3 text-orange",
     component: Maps,
     layout: "/admin"
   },
   {
     path: "/user-profile",
-    name: "User Profile",
+    name: "routes.user-profile",
     icon: "ni ni-single-02 text-yellow",
     component: Profile,
     layout: "/admin"
   },
   {
     path: "/tables",
-    name: "Tables",
+    name: "routes.table",
     icon: "ni ni-bullet-list-67 text-red",
     component: Tables,
     layout: "/admin"
   },
   {
     path: "/login",
-    name: "Login",
+    name: "routes.login",
     icon: "ni ni-key-25 text-info",
     component: Login,
     layout: "/auth"
   },
   {
     path: "/register",
-    name: "Register",
+    name: "routes.register",
     icon: "ni ni-circle-08 text-pink",
     component: Register,
     layout: "/auth"
   },
   {
     path: "/category",
-    name: "Category",
+    name: "routes.category",
     icon: "ni ni-archive-2 text-info",
     component: Category,
     layout: "/admin"

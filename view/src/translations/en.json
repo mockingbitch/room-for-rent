@@ -44,5 +44,11 @@
     },
     "category": {
         "table": "Category table"
+    },
+    "routes": {
+        "category": "Category",
+        "dashboard": "Dashboard",
+        "tag": "Tag",
+        "house": "House"
     }
 }

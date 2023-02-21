@@ -14,7 +14,7 @@ import {
   Col
 } from "reactstrap";
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../../redux/slides/authSlide'
+import { login } from '../../redux/slides/authSlide';
 import { useHistory  } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 const Login = () => {
@@ -44,11 +44,11 @@ const Login = () => {
 
   const handleSubmit = () => {
     setIsLoading(true);
-    setTimeout(() => {
-      const action = login(data);
-      dispatch(action);
-      setIsLoading(false);
-    }, 2000)
+      setTimeout(() => {
+        const action = login(data);
+        dispatch(action);
+        setIsLoading(false);
+      }, 2000)
     }
   return (
     <>

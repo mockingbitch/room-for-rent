@@ -17,8 +17,13 @@ import {
   Media
 } from "reactstrap";
 import i18n from '../../translations/i18n.js';
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 const AdminNavbar = (props) => {
+  const {t} = useTranslation();
+  const user = useSelector(state => state.auth.user.user);
+
   const handleChangeEN = () => {
     i18n.changeLanguage('en');
   }
@@ -26,6 +31,7 @@ const AdminNavbar = (props) => {
   const handleChangeVI = () => {
       i18n.changeLanguage('vi');
   }
+
   return (
     <>
       <Navbar className="navbar-top navbar-dark" expand="md" id="navbar-main">
@@ -34,7 +40,7 @@ const AdminNavbar = (props) => {
             className="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block"
             to="/"
           >
-            {props.brandText}
+            {t(props.brandText)}
           </Link>
           <Form className="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
             <FormGroup className="mb-0">
@@ -60,7 +66,7 @@ const AdminNavbar = (props) => {
                   </span>
                   <Media className="ml-2 d-none d-lg-block">
                     <span className="mb-0 text-sm font-weight-bold">
-                      Jessica Jones
+                      {user.name}
                     </span>
                   </Media>
                 </Media>

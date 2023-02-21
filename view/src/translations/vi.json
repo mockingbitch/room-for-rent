@@ -39,5 +39,11 @@
     },
     "category": {
         "table": "Danh sách danh mục"
+    },
+    "routes": {
+        "category": "Danh mục",
+        "dashboard": "Trang quản trị",
+        "tag": "Thẻ",
+        "house": "Nhà"
     }
 }

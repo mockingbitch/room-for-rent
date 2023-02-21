@@ -1,13 +1,15 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import demoReducer from './slides/demoSlide';
 import authReducer from './slides/authSlide';
+import categoryReducer from './slides/categorySlide';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
     demo: demoReducer,
-    auth: authReducer
+    auth: authReducer,
+    category: categoryReducer
 });
 
 const persistConfig = {

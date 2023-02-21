@@ -20,9 +20,19 @@ import {
     } from "reactstrap";
 import Header from "../../components/Headers/Header.jsx";
 import { useTranslation } from 'react-i18next';
+import { get } from '../../redux/slides/categorySlide';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Category = () => {
     const {t} = useTranslation();
+    const dispatch = useDispatch();
+    const category = useSelector(state => state.category)
+
+    React.useEffect(()=> {
+        const action = get();
+        dispatch(action);
+        console.log(category);
+    }, []);
 
     return (
         <>
