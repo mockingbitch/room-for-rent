@@ -1,5 +1,6 @@
 import React from "react";
 import i18n from "i18next";
+
 export default class ChangeLang extends React.Component {
     state = {
         lang: "en"

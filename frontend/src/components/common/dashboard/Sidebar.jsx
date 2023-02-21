@@ -1,7 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useTranslation } from 'react-i18next';
 
 const Sidebar = () => {
+    const {t} = useTranslation();
     return (
         <>
             <ul className="navbar-nav">
@@ -87,7 +89,7 @@ const Sidebar = () => {
                             </g>
                             </svg>
                         </div>
-                        <span className="nav-link-text ms-1">Categories</span>
+                        <span className="nav-link-text ms-1">{t("category")}</span>
                     </NavLink>
                 </li>
                 <li className="nav-item">

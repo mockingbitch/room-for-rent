@@ -1,0 +1,40 @@
+{
+    "common": {
+        "add": "Add",
+        "edit": "Edit",
+        "delete": "Delete",
+        "decentralize": "Decentralize",
+        "close": "Close",
+        "save": "Save",
+        "refresh": "Refresh",
+        "accept": "Accept",
+        "confirm": "Confirm",
+        "confirm-this-task": "Are you sure to process this task?",
+        "fail-to-load-data": "Fail to load data",
+        "unknown-error": "There was an error",
+        "internal-server-error": "Internal server error",
+        "bad-request": "Bad request",
+        "forbiden-request": "Invalid input data",
+        "fail-to-load-all-code": "Fail to load data from allcode",
+        "sum": "Sum",
+        "name_vi": "Tên (Vi)",
+        "name_en": "Tên (En)",
+        "description_vi": "Mô tả (Vi)",
+        "description_en": "Mô tả (En)",
+        "created_at": "Ngày tạo",
+        "welcome": "Chào mừng đến với Rent Room!"
+    },
+    "auth": {
+        "login": "Đăng nhập",
+        "sign_in_with": "Đăng nhập bằng",
+        "sign_in_with_credentials": "Hoặc đăng nhập với",
+        "remember_me": "Lưu mật khẩu",
+        "forgot_password": "Quên mật khẩu",
+        "create_new_account": "Tạo tài khoản",
+        "email": "Email",
+        "password": "Mật khẩu"
+    },
+    "category": {
+        "table": "Danh sách danh mục"
+    }
+}

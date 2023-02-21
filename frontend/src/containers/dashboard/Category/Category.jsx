@@ -1,8 +1,17 @@
 import React from 'react'
 import Footer from '../../../components/common/Footer'
-import { FormattedMessage } from 'react-intl';
+import i18n from '../../../../../view/src/translations/i18n';
 
 const Category = () => {
+
+    const handleChangeEN = () => {
+        i18n.changeLanguage('en');
+    }
+
+    const handleChangeVN = () => {
+        i18n.changeLanguage('vi');
+    }
+
     return (
         <>
             <div className="container-fluid py-4">

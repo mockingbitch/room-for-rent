@@ -8,24 +8,28 @@ i18n.use(initReactI18next).init({
       translation: {
         Hi: "Hi",
         Actions: "Actions",
+        Categories: "Categories"
       },
     },
     tm: {
       translation: {
         Hi: "வணக்கம்",
         Actions: "செயல்கள்",
+        Categories: "Categoriestm"
       },
     },
     sp: {
       translation: {
         Hi: "Hola",
         Actions: "Comportamiento",
+        Categories: "Categorieshola"
       },
     },
     tl: {
       translation: {
         Hi: "హాయ్",
         Actions: "చర్యలు",
+        Categories: "Categoriesholatk"
       },
     },
   },
