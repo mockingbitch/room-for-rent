@@ -28,10 +28,12 @@
         "description_vi": "Description (Vi)",
         "description_en": "Description (En)",
         "created_at": "Created At",
-        "welcome": "Welcome to Rent Room!"
+        "welcome": "Welcome to Rent Room!",
+        "dashboard": "Dashboard"
     },
     "auth": {
         "login": "Login",
+        "register": "Register",
         "sign_in_with": "Sign In With",
         "sign_in_with_credentials": "Or sign in with credentials",
         "remember_me": "Remember Me",
