@@ -1,0 +1,46 @@
+{
+    "common": {
+        "add": "Add",
+        "edit": "Edit",
+        "delete": "Delete",
+        "decentralize": "Decentralize",
+        "close": "Close",
+        "save": "Save",
+        "refresh": "Refresh",
+        "accept": "Accept",
+        "confirm": "Confirm",
+        "confirm-this-task": "Are you sure to process this task?",
+        "fail-to-load-data": "Fail to load data",
+        "unknown-error": "There was an error",
+        "internal-server-error": "Internal server error",
+        "bad-request": "Bad request",
+        "forbiden-request": "Invalid input data",
+        "fail-to-load-all-code": "Fail to load data from allcode",
+        "sum": "Sum",
+        "category": "Category",
+        "tag": "Tag",
+        "user": "User",
+        "house": "House",
+        "profile": "Profile",
+        "signin": "Sign In",
+        "name_vi": "Name (Vi)",
+        "name_en": "Name (En)",
+        "description_vi": "Description (Vi)",
+        "description_en": "Description (En)",
+        "created_at": "Created At",
+        "welcome": "Welcome to Rent Room!"
+    },
+    "auth": {
+        "login": "Login",
+        "sign_in_with": "Sign In With",
+        "sign_in_with_credentials": "Or sign in with credentials",
+        "remember_me": "Remember Me",
+        "forgot_password": "Forgot Password",
+        "create_new_account": "Create New Account",
+        "email": "Email",
+        "password": "Password"
+    },
+    "category": {
+        "table": "Category table"
+    }
+}

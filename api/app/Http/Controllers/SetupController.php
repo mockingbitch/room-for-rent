@@ -19,47 +19,27 @@ class SetupController extends Controller
 
     public function setUp()
     {
-        try {
-            \Artisan::call('db:seed --class=SqlFileSeeder');
-            \Artisan::call('migrate');
-        } catch (\Exception $e) {
-            echo 'Error migrate db';
-        }
+        \Artisan::call('db:seed --class=SqlFileSeeder');
+        \Artisan::call('migrate');
 
-        try {
-            $role               = Role::create([RoleConstant::COLUMN_NAME => RoleConstant::ROLE_SUPER_ADMIN]);
-            $roleHouseHolder    = Role::create([RoleConstant::COLUMN_NAME => RoleConstant::ROLE_HOUSE_HOLDER]);
-            $roleGuest          = Role::create([RoleConstant::COLUMN_NAME => RoleConstant::ROLE_GUEST]);
-        } catch (\Exception $e) {
-            echo 'Error create role. ';
-        }
+        $role               = Role::create([RoleConstant::COLUMN_NAME => RoleConstant::ROLE_SUPER_ADMIN]);
+        $roleHouseHolder    = Role::create([RoleConstant::COLUMN_NAME => RoleConstant::ROLE_HOUSE_HOLDER]);
+        $roleGuest          = Role::create([RoleConstant::COLUMN_NAME => RoleConstant::ROLE_GUEST]);
 
-        try {
-            $user = User::create([
-                'name' => env('USER_NAME'),
-                'email' => env('USER_EMAIL'),
-                'password' => bcrypt(env('USER_PASSWORD'))
-            ]);
-        } catch (\Exception $e) {
-            echo 'Error create user. ';
-        }
+        $user = User::create([
+            'name' => env('USER_NAME'),
+            'email' => env('USER_EMAIL'),
+            'password' => bcrypt(env('USER_PASSWORD'))
+        ]);
 
-        try {
-            $permissions = [];
+        $permissions = [];
 
-            foreach (PermissionConstant::PERMISSIONS as $permission) :
-                $permissions[] = Permission::create([PermissionConstant::COLUMN_NAME => $permission]);
-            endforeach;
-        } catch (\Exception $e) {
-            echo 'Error create permissions. ';
-        }
+        foreach (PermissionConstant::PERMISSIONS as $permission) :
+            $permissions[] = Permission::create([PermissionConstant::COLUMN_NAME => $permission]);
+        endforeach;
 
-        try {
-            $role->syncPermissions($permissions);
-            $user->syncRoles($role);
-        } catch (\Exception $e) {
-            echo 'Error sync role & permissions. ';
-        }
+        $role->syncPermissions($permissions);
+        $user->syncRoles($role);
 
         return response()->json([
             'message'       => Constant::MSG_SETUP_SUCCESS,

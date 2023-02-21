@@ -13,10 +13,13 @@ services:
         ports:
             - "81:80"
         volumes:
-            - ./api:/var/www/html
+            - ./api:/var/www/html/api
+            - ./frontend:/var/www/html/frontend
+            - ./adminer:/var/www/html/adminer
             - ./docker/logs/nginx_log:/var/log/nginx
-            - ./docker/config/nginx/rentroom/app.conf:/etc/nginx/conf.d/rentroom.conf
+            - ./docker/config/nginx/api/app.conf:/etc/nginx/conf.d/api.rentroom.conf
             - ./docker/config/nginx/adminer/app.conf:/etc/nginx/conf.d/adminer.conf
+            - ./docker/config/nginx/frontend/app.conf:/etc/nginx/conf.d/frontend.conf
         links:
             - php
             - mysql
@@ -28,7 +31,8 @@ services:
             dockerfile: PHP.Dockerfile
         container_name: php_rent_room
         volumes:
-            - ./api:/var/www/html
+            - ./api:/var/www/html/api
+            - ./adminer:/var/www/html/adminer
             - ./docker/logs/php_fpm_log:/var/log/php-fpm
             - ./docker/config/php-fpm/custom.ini:/usr/local/etc/php/conf.d/custom.ini
         networks:
