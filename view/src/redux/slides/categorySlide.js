@@ -2,7 +2,8 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import {GetCategoryService} from '../../services/CategoryService'
 
 const initialState = {
-    category : {}
+    category : {},
+    selected : {}
 };
 
 export const get = createAsyncThunk(
@@ -14,6 +15,14 @@ export const get = createAsyncThunk(
     }
 )
 
+export const selected = createAsyncThunk(
+    "category/selected",
+    async (id) => {
+        const res = await GetCategoryService(id);
+        return res;
+    }
+)
+
 const categorySlide = createSlice({
     name: 'category',
     initialState,
@@ -21,6 +30,9 @@ const categorySlide = createSlice({
         [get.fulfilled]: (state, action) => {
             state.category = action.payload ;
         },
+        [selected.fulfilled]: (state, action) => {
+            state.selected = action.payload;
+        }
     }
 })
 

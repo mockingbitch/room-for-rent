@@ -1,22 +1,22 @@
 {
     "common": {
-        "add": "Add",
-        "edit": "Edit",
-        "delete": "Delete",
+        "add": "Thêm mới",
+        "edit": "Sửa",
+        "delete": "Xóa",
         "decentralize": "Decentralize",
-        "close": "Close",
-        "save": "Save",
-        "refresh": "Refresh",
-        "accept": "Accept",
-        "confirm": "Confirm",
+        "close": "Đóng",
+        "save": "Lưu",
+        "refresh": "Làm mới ",
+        "accept": "Chấp nhận",
+        "confirm": "Xác nhận",
         "confirm-this-task": "Are you sure to process this task?",
-        "fail-to-load-data": "Fail to load data",
+        "fail-to-load-data": "Lỗi load data",
         "unknown-error": "There was an error",
         "internal-server-error": "Internal server error",
         "bad-request": "Bad request",
         "forbiden-request": "Invalid input data",
         "fail-to-load-all-code": "Fail to load data from allcode",
-        "sum": "Sum",
+        "sum": "Tổng",
         "name_vi": "Tên (Vi)",
         "name_en": "Tên (En)",
         "description_vi": "Mô tả (Vi)",
@@ -38,7 +38,10 @@
         "password": "Mật khẩu"
     },
     "category": {
-        "table": "Danh sách danh mục"
+        "table": "Danh sách danh mục",
+        "create": "Tạo mới danh mục",
+        "update": "Sửa danh mục",
+        "delete": "Xóa danh mục"
     },
     "routes": {
         "category": "Danh mục",

@@ -43,7 +43,10 @@
         "password": "Password"
     },
     "category": {
-        "table": "Category table"
+        "table": "Category table",
+        "create": "Category create",
+        "update": "Category update",
+        "delete": "Category delete"
     },
     "routes": {
         "category": "Category",

@@ -1,11 +1,12 @@
 import Index from "./views/Index.js";
-import Profile from "./views/examples/Profile.js";
-import Maps from "./views/examples/Maps.js";
-import Register from "./views/examples/Register.js";
-import Login from "./views/examples/Login.jsx";
-import Tables from "./views/examples/Tables.js";
-import Icons from "./views/examples/Icons.js";
-import Category from "./views/examples/Category.jsx";
+import Profile from "./views/dashboard/Profile.js";
+import Maps from "./views/dashboard/Maps.js";
+import Register from "./views/dashboard/Register.js";
+import Login from "./views/dashboard/Login.jsx";
+import Tables from "./views/dashboard/Tables.js";
+import Icons from "./views/dashboard/Icons.js";
+import Category from "./views/dashboard/Category.jsx";
+import Test from "./views/dashboard/Test.jsx";
 
 var routes = [
   {
@@ -62,6 +63,13 @@ var routes = [
     name: "routes.category",
     icon: "ni ni-archive-2 text-info",
     component: Category,
+    layout: "/admin"
+  },
+  {
+    path: "/test",
+    name: "routes.test",
+    icon: "ni ni-archive-2 text-info",
+    component: Test,
     layout: "/admin"
   }
 ];
