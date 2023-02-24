@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import {GetCategoryService} from '../../services/CategoryService'
+import { GetCategoryService } from '../../services/CategoryService'
 
 const initialState = {
     category : {},
@@ -19,6 +19,7 @@ export const selected = createAsyncThunk(
     "category/selected",
     async (id) => {
         const res = await GetCategoryService(id);
+
         return res;
     }
 )

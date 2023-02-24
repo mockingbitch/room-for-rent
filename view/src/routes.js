@@ -6,7 +6,8 @@ import Login from "./views/dashboard/Login.jsx";
 import Tables from "./views/dashboard/Tables.js";
 import Icons from "./views/dashboard/Icons.js";
 import Category from "./views/dashboard/Category.jsx";
-import Test from "./views/dashboard/Test.jsx";
+import Tag from "./views/dashboard/Tag.jsx";
+import House from "./views/dashboard/House.jsx";
 
 var routes = [
   {
@@ -26,8 +27,8 @@ var routes = [
   {
     path: "/house",
     name: "routes.house",
-    icon: "ni ni-pin-3 text-orange",
-    component: Maps,
+    icon: "ni ni-building text-blue",
+    component: House,
     layout: "/admin"
   },
   {
@@ -66,10 +67,10 @@ var routes = [
     layout: "/admin"
   },
   {
-    path: "/test",
-    name: "routes.test",
-    icon: "ni ni-archive-2 text-info",
-    component: Test,
+    path: "/tag",
+    name: "routes.tag",
+    icon: "ni ni-tag",
+    component: Tag,
     layout: "/admin"
   }
 ];

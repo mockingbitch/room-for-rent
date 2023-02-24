@@ -26,6 +26,14 @@
         "welcome": "Chào mừng đến với Rent Room!",
         "dashboard": "Trang quản trị"
     },
+    "message": {
+        "created": "Tạo mới!",
+        "updated": "Sửa!",
+        "create_tag": "Tạo mới thẻ thành công",
+        "create_category": "Tạo mới danh mục thành công",
+        "update_tag": "Sửa thẻ thành công",
+        "update_category": "Sửa danh mục thành công"
+    },
     "auth": {
         "login": "Đăng nhập",
         "register": "Đăng ký",
@@ -43,10 +51,28 @@
         "update": "Sửa danh mục",
         "delete": "Xóa danh mục"
     },
+    "tag": {
+        "table": "Danh sách thẻ",
+        "create": "Tạo mới thẻ",
+        "update": "Sửa thẻ",
+        "delete": "Xóa thẻ"
+    },
+    "house": {
+        "table": "Danh sách nhà",
+        "create": "Tạo mới nhà",
+        "update": "Sửa nhà",
+        "delete": "Xóa nhà"
+    },
     "routes": {
         "category": "Danh mục",
         "dashboard": "Trang quản trị",
         "tag": "Thẻ",
-        "house": "Nhà"
+        "house": "Nhà",
+        "icons": "Icons",
+        "user-profile": "Trang cá nhân",
+        "table": "Bảng",
+        "login": "Đăng nhập",
+        "register": "Đăng ký",
+        "test": "Test"
     }
 }

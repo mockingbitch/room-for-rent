@@ -14,8 +14,8 @@ class TagRequest extends Request
     public function rules()
     {
         return [
-            'name_vi'           => 'required|max:30|unique:tags,name_vi',
-            'name_en'           => 'required|max:30|unique:tags,name_en',
+            'name_vi'           => 'required|max:30|unique:tags,name_vi,NULL,id,deleted_at,NULL',
+            'name_en'           => 'required|max:30|unique:tags,name_en,NULL,id,deleted_at,NULL',
             'description_vi'    => 'max:255',
             'description_en'    => 'max:255'
         ];

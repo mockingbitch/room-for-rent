@@ -31,6 +31,12 @@
         "welcome": "Welcome to Rent Room!",
         "dashboard": "Dashboard"
     },
+    "message": {
+        "created": "Created!",
+        "updated": "Updated!",
+        "create_tag": "Created tag successfully",
+        "create_category": "Created category successfully"
+    },
     "auth": {
         "login": "Login",
         "register": "Register",
@@ -48,10 +54,28 @@
         "update": "Category update",
         "delete": "Category delete"
     },
+    "tag": {
+        "table": "Tag table",
+        "create": "Tag create",
+        "update": "Tag update",
+        "delete": "Tag delete"
+    },
+    "house": {
+        "table": "House table",
+        "create": "House create",
+        "update": "House update",
+        "delete": "House delete"
+    },
     "routes": {
         "category": "Category",
         "dashboard": "Dashboard",
         "tag": "Tag",
-        "house": "House"
+        "house": "House",
+        "icons": "Icons",
+        "user-profile": "User Profile",
+        "table": "Table",
+        "login": "Login",
+        "register": "Register",
+        "test": "Test"
     }
 }

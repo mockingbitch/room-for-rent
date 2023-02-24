@@ -17,6 +17,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../redux/slides/authSlide';
 import { useHistory  } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+
 const Login = () => {
   const {t} = useTranslation();
   const dispatch = useDispatch();
@@ -30,8 +31,8 @@ const Login = () => {
   const authRedux = useSelector(state => state.auth);
 
   useEffect(() => {
-      if (authRedux.user.access_token !== undefined) {
-          console.log('Logged in', authRedux.user.access_token);
+      if (authRedux.user !== null && authRedux.user.access_token !== "") {
+          console.log('Logged in', authRedux.user);
           history.push('/admin/index');
       }
   }, [authRedux])
@@ -39,7 +40,6 @@ const Login = () => {
   const handleOnChange = useCallback(event => {
     const { name, value } = event.target;
     setData({ ...data, [name]: value });
-    console.log(data);
   });
 
   const handleSubmit = () => {

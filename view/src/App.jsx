@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import AdminLayout from "./layouts/Admin.js";
+import AdminLayout from "./layouts/Admin.jsx";
 import AuthLayout from "./layouts/Auth.js";
 
 const App = () => {

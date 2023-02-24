@@ -23,8 +23,8 @@ const CreateCategoryModal = (props) => {
             let res = await CreateCategoryService(data, token);
             if (res && res.data.error === 0) {
                 swal({
-                    title: "Created!",
-                    text: "Created tag successfully!",
+                    title: t('message.created'),
+                    text: t('message.create_category'),
                     icon: "success",
                     button: "OK!",
                 });

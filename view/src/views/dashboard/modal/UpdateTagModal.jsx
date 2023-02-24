@@ -6,9 +6,9 @@ import MenuItem from '@mui/material/MenuItem';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import swal from 'sweetalert';
-import { UpdateCategoryService } from '../../../services/CategoryService';
+import { UpdateTagService } from '../../../services/TagService';
 
-const UpdateCategoryModal = (props) => {
+const UpdateTagModal = (props) => {
     const {item} = props;
     const {t} = useTranslation();
     const [data, setData] = useState([]);
@@ -22,11 +22,11 @@ const UpdateCategoryModal = (props) => {
 
     const handleUpdate = async () => {
         try {
-            let res = await UpdateCategoryService(data, token, item.id);
+            let res = await UpdateTagService(data, token, item.id);
             if (res && res.data.error === 0) {
                 swal({
                     title: "Updated!",
-                    text: "Update category successfully!",
+                    text: "Update tag successfully!",
                     icon: "success",
                     button: "OK!",
                 });
@@ -56,7 +56,7 @@ const UpdateCategoryModal = (props) => {
         <>
             <Modal {...props}>
                 <Modal.Header closeButton>
-                    <Modal.Title>{t('category.update')}</Modal.Title>
+                    <Modal.Title>{t('tag.update')}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <div className="modal-body-content">
@@ -93,4 +93,4 @@ const UpdateCategoryModal = (props) => {
     )
 }
 
-export default UpdateCategoryModal
+export default UpdateTagModal

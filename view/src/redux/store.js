@@ -2,6 +2,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import demoReducer from './slides/demoSlide';
 import authReducer from './slides/authSlide';
 import categoryReducer from './slides/categorySlide';
+import tagReducer from './slides/tagSlide';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
@@ -9,7 +10,8 @@ import thunk from 'redux-thunk';
 const rootReducer = combineReducers({
     demo: demoReducer,
     auth: authReducer,
-    category: categoryReducer
+    category: categoryReducer,
+    tag: tagReducer
 });
 
 const persistConfig = {

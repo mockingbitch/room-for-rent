@@ -15,8 +15,13 @@ const LoginService = ({email, password}) => {
 
             return response.data;
         });
-    }
+}
+
+const LogoutService = (token) => {
+    return axios.get(API_URL + "logout", { headers: {"Authorization" : `Bearer ${token}`} }).then(response => response.data)
+}
 
 export {
-    LoginService
+    LoginService,
+    LogoutService,
 }

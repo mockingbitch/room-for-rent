@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import React from 'react';
 // reactstrap components
 import {
   DropdownMenu,
@@ -18,18 +19,39 @@ import {
 } from "reactstrap";
 import i18n from '../../translations/i18n.js';
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from '../../redux/slides/authSlide';
+import { useHistory  } from "react-router-dom";
 
 const AdminNavbar = (props) => {
   const {t} = useTranslation();
-  const user = useSelector(state => state.auth.user.user);
+  const dispatch = useDispatch();
+  // const user = useSelector(state => state.auth.user.user);
+  // const token = useSelector(state => state.auth.user.access_token);
+  const auth = useSelector(state => state.auth);
+  const history  = useHistory();
+
+  React.useEffect(() => {
+    if (auth.user === null || auth.isLoggedIn === false) {
+      console.log(auth.user);
+      history.push('/auth/login');
+    }
+  }, []);
 
   const handleChangeEN = () => {
     i18n.changeLanguage('en');
   }
 
   const handleChangeVI = () => {
-      i18n.changeLanguage('vi');
+    i18n.changeLanguage('vi');
+  }
+
+  const handleLogout = async () => {
+    console.log('logout');
+    let token = auth.user !== null ? auth.user.access_token : null;
+    const action = logout(token);
+    await dispatch(action);
+    history.push('/auth/login');
   }
 
   return (
@@ -66,7 +88,7 @@ const AdminNavbar = (props) => {
                   </span>
                   <Media className="ml-2 d-none d-lg-block">
                     <span className="mb-0 text-sm font-weight-bold">
-                      {user.name}
+                      {auth.user !== null ? auth.user.name : ''}
                     </span>
                   </Media>
                 </Media>
@@ -100,7 +122,7 @@ const AdminNavbar = (props) => {
                   <span>English</span>
                 </DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+                <DropdownItem onClick={handleLogout}>
                   <i className="ni ni-user-run" />
                   <span>Logout</span>
                 </DropdownItem>

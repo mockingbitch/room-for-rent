@@ -14,7 +14,7 @@ import {
 import { useTranslation } from 'react-i18next';
 
 
-const AdminNavbar = () => {
+const AuthNavbar = () => {
   const {t} = useTranslation();
   return (
     <>
@@ -89,4 +89,4 @@ const AdminNavbar = () => {
   );
 };
 
-export default AdminNavbar;
+export default AuthNavbar;

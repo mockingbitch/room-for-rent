@@ -17,16 +17,16 @@ import {
     } from "reactstrap";
 import Header from "../../components/Headers/Header.jsx";
 import { useTranslation } from 'react-i18next';
-import { GetCategoryService, DeleteCategoryService } from '../../services/CategoryService.js';
-import CreateCategoryModal from './modal/CreateCategoryModal';
-import UpdateCategoryModal from './modal/UpdateCategoryModal';
+import { GetTagService, DeleteTagService } from '../../services/TagService.js';
+import CreateTagModal from './modal/CreateTagModal';
+import UpdateTagModal from './modal/UpdateTagModal.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import swal from 'sweetalert';
 
-const Category = () => {
+const Tag = () => {
     const {t} = useTranslation();
     const dispatch = useDispatch();
-    const [categories, setCategories] = useState();
+    const [tags, setCategories] = useState();
     const [message, setMessage] = useState();
     const [modalCreateShow, setModalCreateShow] = useState(false);
     const [modalUpdateShow, setModalUpdateShow] = useState(false);
@@ -39,8 +39,8 @@ const Category = () => {
 
     const getCategories = async () => {
         try {
-            const data = await GetCategoryService();
-            setCategories(data.categories);
+            const data = await GetTagService();
+            setCategories(data.tags);
         } catch (error) {
             setMessage('Failed to call api');
         }
@@ -55,7 +55,7 @@ const Category = () => {
         setModalUpdateShow(true);
     }
 
-    const handleDeleteCategory = async (item) => {
+    const handleDeleteTag = async (item) => {
         try {
             swal({
                 title: "Are you sure?",
@@ -66,7 +66,7 @@ const Category = () => {
             })
             .then(async (willDelete) => {
                 if (willDelete) {
-                    let res = await DeleteCategoryService(item.id, token);
+                    let res = await DeleteTagService(item.id, token);
                     getCategories();
                     swal("Poof! Your imaginary file has been deleted!", {
                         icon: "success",
@@ -97,7 +97,7 @@ const Category = () => {
                 <div className="col">
                 <Card className="shadow">
                     <CardHeader className="border-0">
-                        <h3 className="mb-0" style={{display: "inline"}}>{t("category.table")}</h3>
+                        <h3 className="mb-0" style={{display: "inline"}}>{t("tag.table")}</h3>
                         <Button
                             color="primary"
                             type="button"
@@ -119,7 +119,7 @@ const Category = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        { categories && categories.map((item) => {
+                        { tags && tags.map((item) => {
                             return (
                                 <tr key={item.id}>
                                     <td scope="row">
@@ -165,12 +165,12 @@ const Category = () => {
                                             <i className="ni ni-settings-gear-65" /> {t('common.edit')}
                                             </DropdownItem>
                                             <DropdownItem
-                                            onClick={() => handleDeleteCategory(item)}
+                                            onClick={() => handleDeleteTag(item)}
                                             >
                                             <i className="ni ni-fat-remove" /> {t('common.delete')}
                                             </DropdownItem>
                                             <DropdownItem
-                                            onClick={(e) => e.preventDefault()}
+                                                onClick={(e) => e.preventDefault()}
                                             >
                                             Something else here
                                             </DropdownItem>
@@ -239,13 +239,13 @@ const Category = () => {
             </Row>
             {/* Dark table */}
             </Container>
-            <CreateCategoryModal
+            <CreateTagModal
                 show={modalCreateShow}
                 onHide={() => setModalCreateShow(false)}
                 refresh={getCategories}
             />
             {modalUpdateShow && (
-                <UpdateCategoryModal
+                <UpdateTagModal
                     show={modalUpdateShow}
                     item={selectedItem}
                     onHide={() => setModalUpdateShow(false)}
@@ -257,4 +257,4 @@ const Category = () => {
     )
 }
 
-export default Category
+export default Tag
