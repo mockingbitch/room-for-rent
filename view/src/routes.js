@@ -72,6 +72,20 @@ var routes = [
     icon: "ni ni-tag",
     component: Tag,
     layout: "/admin"
+  },
+  {
+    path: "/user",
+    name: "routes.user",
+    icon: "ni ni-tag",
+    component: Tag,
+    layout: "/householder"
+  },
+  {
+    path: "/index",
+    name: "routes.dashboard",
+    icon: "ni ni-tv-2 text-primary",
+    component: Index,
+    layout: "/householder"
   }
 ];
 export default routes;
