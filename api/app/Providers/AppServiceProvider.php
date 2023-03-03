@@ -28,6 +28,16 @@ class AppServiceProvider extends ServiceProvider
         foreach ($models as $model) {
             $this->app->bind("App\Repositories\\{$model}\\{$model}RepositoryInterface", "App\Repositories\\{$model}\\{$model}Repository");
         }
+
+        $address = [
+            'Ward',
+            'District',
+            'Province'
+        ];
+
+        foreach($address as $addr) {
+            $this->app->bind("App\Repositories\Address\\{$addr}RepositoryInterface", "App\Repositories\Address\\{$addr}Repository");
+        }
     }
 
     /**

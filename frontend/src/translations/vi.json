@@ -24,7 +24,9 @@
         "created_at": "Ngày tạo",
         "profile": "Trang cá nhân",
         "welcome": "Chào mừng đến với Rent Room!",
-        "dashboard": "Trang quản trị"
+        "dashboard": "Trang quản trị",
+        "name": "Tên",
+        "description": "Mô tả"
     },
     "message": {
         "created": "Tạo mới!",
@@ -46,6 +48,7 @@
         "password": "Mật khẩu"
     },
     "category": {
+        "name": "Danh mục",
         "table": "Danh sách danh mục",
         "create": "Tạo mới danh mục",
         "update": "Sửa danh mục",
@@ -73,6 +76,7 @@
         "table": "Bảng",
         "login": "Đăng nhập",
         "register": "Đăng ký",
-        "test": "Test"
+        "test": "Test",
+        "house_holder": "Trang chủ trọ"
     }
 }

@@ -7,7 +7,7 @@ import { Container, Row, Col } from "reactstrap";
 import AuthNavbar from "../components/Navbars/AuthNavbar.js";
 import AuthFooter from "../components/Footers/AuthFooter.js";
 import { useTranslation } from 'react-i18next';
-import routes from "../routes.js";
+import {routes} from "../routes.js";
 
 const Auth = (props) => {
   const {t} = useTranslation();

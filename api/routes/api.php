@@ -12,6 +12,8 @@ use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\TagController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\HouseController;
+use App\Http\Controllers\Api\AddressController;
+
 
 
 /*
@@ -88,4 +90,7 @@ Route::middleware('cors')->group(function () {
         Route::put('house', 'updateHouse');
     });
 
+    Route::controller(AddressController::class)->group(function () {
+        Route::get('district', 'getDistrict');
+    });
 });

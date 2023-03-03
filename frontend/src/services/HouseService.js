@@ -15,7 +15,8 @@ const GetHouseService = (id) => {
 }
 
 const CreateHouseService = (data, token) => {
-    return axios.post(API_URL + "house", data, { headers: {"Authorization" : `Bearer ${token}`} })
+    console.log(data);
+    // return axios.post(API_URL + "house", data, { headers: {"Authorization" : `Bearer ${token}`} })
 }
 
 const UpdateHouseService = (data, token, id) => {

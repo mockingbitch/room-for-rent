@@ -29,7 +29,9 @@
         "description_en": "Description (En)",
         "created_at": "Created At",
         "welcome": "Welcome to Rent Room!",
-        "dashboard": "Dashboard"
+        "dashboard": "Dashboard",
+        "name": "Name",
+        "description": "Description"
     },
     "message": {
         "created": "Created!",
@@ -49,6 +51,7 @@
         "password": "Password"
     },
     "category": {
+        "name": "Category",
         "table": "Category table",
         "create": "Category create",
         "update": "Category update",
@@ -76,6 +79,7 @@
         "table": "Table",
         "login": "Login",
         "register": "Register",
-        "test": "Test"
+        "test": "Test",
+        "house_holder": "House Holder"
     }
 }

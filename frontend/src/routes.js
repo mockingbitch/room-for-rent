@@ -9,7 +9,7 @@ import Category from "./views/dashboard/Category.jsx";
 import Tag from "./views/dashboard/Tag.jsx";
 import House from "./views/dashboard/House.jsx";
 
-var routes = [
+export const routes = [
   {
     path: "/index",
     name: "routes.dashboard",
@@ -72,20 +72,29 @@ var routes = [
     icon: "ni ni-tag",
     component: Tag,
     layout: "/admin"
+  }
+];
+
+export const houseHolderRoutes = [
+  {
+    path: "/index",
+    name: "routes.house_holder",
+    icon: "ni ni-tv-2 text-primary",
+    component: Index,
+    layout: "/householder"
   },
   {
-    path: "/user",
-    name: "routes.user",
+    path: "/tag",
+    name: "routes.tag",
     icon: "ni ni-tag",
     component: Tag,
     layout: "/householder"
   },
   {
-    path: "/index",
-    name: "routes.dashboard",
-    icon: "ni ni-tv-2 text-primary",
-    component: Index,
+    path: "/house",
+    name: "routes.house",
+    icon: "ni ni-building text-primary",
+    component: House,
     layout: "/householder"
   }
 ];
-export default routes;

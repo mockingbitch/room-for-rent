@@ -34,6 +34,14 @@ class HouseRepository extends BaseRepository implements HouseRepositoryInterface
             'category_id'   => $data['category_id']
         ]);
 
+        foreach ($data['tag_id'] as $tag) :
+            $houseTags = ModelHasTag::create([
+                'model_id'      => $house->id,
+                'model_type'    => 'App\Models\House',
+                'tag_id'        => $tag
+            ]);
+        endforeach;
+
         return $house;
     }
 
