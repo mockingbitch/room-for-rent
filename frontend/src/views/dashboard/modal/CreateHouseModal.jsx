@@ -9,9 +9,8 @@ import swal from 'sweetalert';
 import { CreateHouseService } from '../../../services/HouseService';
 import { GetCategoryService } from '../../../services/CategoryService';
 import { GetTagService } from '../../../services/TagService';
-import { GetDistrictService } from '../../../services/AddressService';
-import AutoCompleteCity from '../../../components/Select/AutoCompleteCity';
 import MultipleSelect from '../../../components/Select/MultipleSelect';
+import AutoCompleteAddress from '../../../components/Select/AutoCompleteAddress';
 
 const CreateHouseModal = (props) => {
     const {t, i18n} = useTranslation();
@@ -20,16 +19,13 @@ const CreateHouseModal = (props) => {
         description: '',
         category_id: '',
         tag_id: [],
-        ward_id: {},
-        city_id: {},
+        ward_code: {},
     });
     const token = useSelector(state => state.auth.user.access_token);
     const [categories, setCategories] = useState([]);
     const [message, setMessage] = useState();
     const [tags, setTags] = useState([]);
-    const [cities, setCities] = useState();
-    const [districts, setDistricts] = useState();
-    const [wards, setWards] = useState();
+
 
     useEffect(() => {
         getCategories();
@@ -101,23 +97,8 @@ const CreateHouseModal = (props) => {
         setData({...data, tag_id: item})
     }
 
-    const autoCompleteOnChangeCity = async (item) => {
-        setData({...data, city_id: item})
-        try {
-            let res = await GetDistrictService(item.id)
-            if (res && res.error === 0) {
-                setDistricts(res.district);
-            } else {
-                swal({
-                    title: "Failed!",
-                    text: "Something went wrong!",
-                    icon: "warning",
-                    button: "Ah shiet!",
-                });
-            }
-        } catch (error) {
-
-        }
+    const handleOnChangeAddress = (item) => {
+        console.log(item);
     }
 
     return (
@@ -159,11 +140,7 @@ const CreateHouseModal = (props) => {
                                     </TextField>
                                 </div>
                             </div>
-                            <div className="row">
-                                <div className="form-group mt-4 col-4">
-                                    <AutoCompleteCity options={tags} passData={autoCompleteOnChangeCity} />
-                                </div>
-                            </div>
+                            <AutoCompleteAddress passData={handleOnChangeAddress} />
                             <div className="row">
                                 <div className="form-group mt-4 col-12">
                                     {/* <MultiSelect arrObj={categories} handleOnChange={handleOnChangeMultiSelect} /> */}

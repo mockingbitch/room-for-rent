@@ -91,6 +91,8 @@ Route::middleware('cors')->group(function () {
     });
 
     Route::controller(AddressController::class)->group(function () {
+        Route::get('province', 'getProvince');
         Route::get('district', 'getDistrict');
+        Route::get('ward', 'getWard');
     });
 });

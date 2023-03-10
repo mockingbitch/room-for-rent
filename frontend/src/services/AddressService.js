@@ -11,25 +11,37 @@ const GetDistrictService = (id) => {
         });
     }
 
-    return axios.get(API_URL + "district" + `?city_id=${id}`);
+    return axios.get(API_URL + "district" + `?province_code=${id}`);
 }
 
-const CreateCategoryService = (data, token) => {
-    return axios.post(API_URL + "category", data, { headers: {"Authorization" : `Bearer ${token}`} })
+const GetProvinceService = (id) => {
+    if (!id || id === undefined) {
+
+        return axios
+        .get(API_URL + "province")
+        .then(response => {
+            return response.data;
+        });
+    }
+
+    return axios.get(API_URL + "province" + `?code=${id}`);
 }
 
-const UpdateCategoryService = (data, token, id) => {
-    return axios.put(API_URL + "category" + `?id=${id}`, data, { headers: {"Authorization" : `Bearer ${token}`} })
-}
+const GetWardService = (id) => {
+    if (!id || id === undefined) {
 
-const DeleteCategoryService = (id, token) => {
-    return axios.delete(API_URL + "category" + `?id=${id}`, { headers: {"Authorization" : `Bearer ${token}`} })
-}
+        return axios
+        .get(API_URL + "ward")
+        .then(response => {
+            return response.data;
+        });
+    }
 
+    return axios.get(API_URL + "ward" + `?district_code=${id}`);
+}
 
 export {
     GetDistrictService,
-    CreateCategoryService,
-    UpdateCategoryService,
-    DeleteCategoryService
+    GetProvinceService,
+    GetWardService
 }

@@ -12,4 +12,16 @@ class WardRepository extends BaseRepository implements WardRepositoryInterface
     {
         return Ward::class;
     }
+
+    public function getWard($code)
+    {
+        $wards = $code || null !== $code ? $this->model->where('district_code', $code)->get() : $this->getAll();
+
+        foreach ($wards as $ward) :
+            $ward->value = $ward->code;
+            $ward->label = $ward->name;
+        endforeach;
+
+        return $wards;
+    }
 }

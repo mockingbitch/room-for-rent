@@ -10,6 +10,7 @@ use App\Repositories\Address\ProvinceRepositoryInterface as ProvinceRepository;
 use App\Repositories\Address\DistrictRepositoryInterface as DistrictRepository;
 use App\Repositories\Address\WardRepositoryInterface as WardRepository;
 use App\Constants\Constant;
+use App\Constants\AddressConstant;
 
 class AddressController extends Controller
 {
@@ -51,22 +52,14 @@ class AddressController extends Controller
     public function getDistrict(Request $request) : JsonResponse
     {
         try {
-            if ($request->province_code || null !== $request->province_code) :
-                if (! $districts = $this->districtRepository->getDistrict($request->province_code)) :
-                    return $this->exceptionResponse(AddressConstant::MSG_NOT_FOUND);
-                endif;
-
-                return response()->json([
-                    'districts'     => $districts,
-                    'message'       => Constant::MSG_OK,
-                    'error'         => Constant::ERR_CODE_OK,
-                ], Response::HTTP_OK);
+            if (! $districts = $this->districtRepository->getDistrict($request->province_code)) :
+                return $this->exceptionResponse(AddressConstant::MSG_NOT_FOUND);
             endif;
 
             return response()->json([
-                'districts'     => $this->districtRepository->getAll(),
+                'districts'     => $districts,
                 'message'       => Constant::MSG_OK,
-                'error'         => Constant::ERR_CODE_OK
+                'error'         => Constant::ERR_CODE_OK,
             ], Response::HTTP_OK);
         } catch (\Exception ) {
             return $this->catchErrorResponse();
@@ -76,22 +69,31 @@ class AddressController extends Controller
     public function getWard(Request $request) : JsonResponse
     {
         try {
-            if ($request->district_code || null !== $request->district_code) :
-                if (! $wards = $this->wardRepository->getWard($request->district_code)) :
-                    return $this->exceptionResponse(AddressConstant::MSG_NOT_FOUND);
-                endif;
-
-                return response()->json([
-                    'districts'     => $districts,
-                    'message'       => Constant::MSG_OK,
-                    'error'         => Constant::ERR_CODE_OK,
-                ], Response::HTTP_OK);
+            if (! $wards = $this->wardRepository->getWard($request->district_code)) :
+                return $this->exceptionResponse(AddressConstant::MSG_NOT_FOUND);
             endif;
 
             return response()->json([
-                'districts'     => $this->districtRepository->getAll(),
+                'wards'         => $wards,
                 'message'       => Constant::MSG_OK,
-                'error'         => Constant::ERR_CODE_OK
+                'error'         => Constant::ERR_CODE_OK,
+            ], Response::HTTP_OK);
+        } catch (\Exception ) {
+            return $this->catchErrorResponse();
+        }
+    }
+
+    public function getProvince(Request $request) : JsonResponse
+    {
+        try {
+            if (! $provinces = $this->provinceRepository->getProvince($request->code)) :
+                return $this->exceptionResponse(AddressConstant::MSG_NOT_FOUND);
+            endif;
+
+            return response()->json([
+                'provinces'         => $provinces,
+                'message'       => Constant::MSG_OK,
+                'error'         => Constant::ERR_CODE_OK,
             ], Response::HTTP_OK);
         } catch (\Exception ) {
             return $this->catchErrorResponse();
