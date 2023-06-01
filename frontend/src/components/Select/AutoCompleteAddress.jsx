@@ -83,10 +83,9 @@ const AutoCompleteAddress = (props) => {
         }
     }
 
-    const handleOnChangeWard = async (item) => {
-        console.log(item);
+    const handleOnChangeWard = (item) => {
         setData({...data, ward: item},
-            props.passData(data)
+            props.passData(item)
         )
     }
 
