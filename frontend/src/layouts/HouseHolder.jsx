@@ -7,7 +7,7 @@ import HouseHolderNavbar from "../components/Navbars/AdminNavbar.js";
 import AdminFooter from "../components/Footers/AdminFooter.js";
 import Sidebar from "../components/Sidebar/Sidebar.js";
 import { useSelector } from "react-redux";
-import {houseHolderRoutes} from "../routes.js";
+import { houseHolderRoutes } from "../routes.js";
 import { useHistory  } from "react-router-dom";
 
 const HouseHolder = (props) => {
@@ -17,10 +17,10 @@ const HouseHolder = (props) => {
     const history  = useHistory();
 
     React.useEffect(() => {
-        if (auth.user === null || auth.isLoggedIn === false) {
-        console.log(auth.user);
-        history.push('/auth/login');
-        }
+        // if (auth.user === null || auth.isLoggedIn === false) {
+        // console.log(auth.user);
+        // // history.push('/auth/login');
+        // }
         document.documentElement.scrollTop = 0;
         document.scrollingElement.scrollTop = 0;
         mainContent.current.scrollTop = 0;
