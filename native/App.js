@@ -1,46 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import Top from './screens/Top/Top';
-import Dashboard from './screens/Dashboard/Dashboard';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React, { useState } from 'react'
+import Navigator from './src/navigators/Navigator'
 
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <View>
-//         <Text>
-//           Tasdnjkasndn
-//         </Text>
-//       </View>
-//       <Text>Test</Text>
-//       <StatusBar style="auto" />
-//     </View>
-//   );
-// }
-const Stack = createNativeStackNavigator();
 const App = () => {
+  const [posibleFriends, setPosibleFriends] = useState([
+    'John', 'Arthur', 'Thomas',
+  ]);
+  const [currentFriend, setCurrentFriend] = useState([]);
+
+  const addFriend = (index) => {
+    const addedFriend = posibleFriends.splice(index, 1)
+    setCurrentFriend(addedFriend)
+  }
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Top"
-          component={ Top }
-          options={{title: 'Welcome'}}
-        />
-        <Stack.Screen name="Dashboard" component={ Dashboard } />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
+    <Navigator
+      screenProps={{
+        currentFriends: currentFriend,
+        possibleFriends: posibleFriends,
+        addFriend: addFriend,
+      }}
+    />
+  )
+}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-
-export default App;
+export default App
